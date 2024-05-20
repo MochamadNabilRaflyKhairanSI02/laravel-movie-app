@@ -67,6 +67,21 @@
                                     </p>
                                 </div>
                             </div>
+
+                            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                                <a href="#" class="block px-4 pt-4">
+                                    <img class="object-cover h-60 w-96" src="src/images/movie/movie-04.jpg" alt="Cards" />
+                                </a>
+
+                                <div class="p-6 overflow-hidden">
+                                    <h4 class="mb-3 text-xl font-semibold text-black dark:text-white">
+                                        <a href="#">Spy X Family</a>
+                                    </h4>
+                                    <p class="font-medium">
+                                        A spy on an undercover mission gets married and adopts a child as part of his cover. His wife and daughter have secrets of their own, and all three must strive to keep together.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </main>

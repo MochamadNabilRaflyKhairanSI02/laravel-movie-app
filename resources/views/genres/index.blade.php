@@ -1,12 +1,12 @@
 @extends('_layouts.main')
 
 @section('content')
-                <main>
+<main>
                     <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
                         <!-- Breadcrumb Start -->
                         <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                             <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                                Tables
+                                Tables Genre
                             </h2>
 
                             <nav>
@@ -25,56 +25,36 @@
                             <!-- ====== Table Two Start -->
                             <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                                 <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="font-medium">ID</p>
+                                    <div class="col-span-2 flex items-center">
+                                        <p class="font-medium"> Id</p>
                                     </div>
                                     <div class="col-span-2 items-center sm:flex">
-                                        <p class="font-medium">Movie</p>
+                                        <p class="font-medium">Name</p>
                                     </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="font-medium">User</p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="font-medium">Rating</p>
-                                    </div>
-                                    <div class="col-span-2 flex items-center">
-                                        <p class="font-medium">Date</p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="font-medium">Action</p>
+                                    <div class="col-span-3 flex items-center">
+                                        <p class="font-medium">Movie Description</p>
                                     </div>
                                 </div>
-
-                            @foreach ($reviews as $review)
+                            @foreach ($genres as $genre)
                                 <div class="grid grid-cols-6 border-t border-stroke px-4 py-4.5 dark:border-strokedark sm:grid-cols-8 md:px-6 2xl:px-7.5">
-                                    <div class="col-span-1 flex items-center">
+                                    <div class="col-span-2 flex items-center">
                                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
                                             <p class="text-sm font-medium text-black dark:text-white">
-                                                {{ $review['id'] }}
+                                                {{ $genre['id'] }}
                                             </p>
                                         </div>
                                     </div>
                                     <div class="col-span-2 items-center sm:flex">
-                                        <div class="w-12 rounded-md m-2">
-                                            <img src="src/images/movie/{{ $review['poster'] }}" alt="Product" />
-                                        </div>
+                                            <div class="w-12 rounded-md m-2">
+                                                <img src="src/images/movie/{{ $genre['poster'] }}" alt="Product" />
+                                            </div>
                                         <p class="text-sm font-medium text-black dark:text-white">
-                                            {{ $review['movie'] }}
+                                            {{ $genre['name'] }}
                                         </p>
                                     </div>
-                                    <div class="col-span-1 flex items-center">
+                                    <div class="col-span-3 flex items-center">
                                         <p class="text-sm font-medium text-black dark:text-white">
-                                            {{ $review['user'] }}
-                                        </p>
-                                    </div>
-                                    <div class="col-span-1 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            {{ $review['rating'] }}
-                                        </p>
-                                    </div>
-                                    <div class="col-span-2 flex items-center">
-                                        <p class="text-sm font-medium text-black dark:text-white">
-                                            {{ $review['date'] }}
+                                        {{ $genre['description'] }}
                                         </p>
                                     </div>
                                     <div class="col-span-1 flex items-center">
@@ -84,10 +64,13 @@
                                         </div>
                                     </div>
                                 </div>
-                               @endforeach
-                            </div>
+                            @endforeach
+
                         </div>
+                        
+                            <!-- ====== Table Two End -->
+                            </div>
+                        <!-- ====== Table Section End -->
                     </div>
                 </main>
-                                
 @endsection
