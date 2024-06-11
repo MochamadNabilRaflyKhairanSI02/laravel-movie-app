@@ -32,10 +32,29 @@ class GenreController extends Controller
 
     return redirect('/genres')->with('success', 'Genre added successfully!');
     }
+
+    public function edit(Genre $genre)
+    {
+        $genres = Genre::all();
+        return view('genres.edit', compact('genre', 'genres'));
+    }
+
+    public function update(Request $request, Genre $genre)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+        ]);
+
+        $genre->update($validatedData);
+
+        return redirect('/genres')->with('success', 'Movie updated successfully!');
+    }
+    
     
     public function destroy(Genre $genre)
-{
-    $genre->delete();
-    return redirect('/genres')->with('success', 'Genre deleted successfully!');
-}
+    {
+        $genre->delete();
+        return redirect('/genres')->with('success', 'Genre deleted successfully!');
+    }
 }
